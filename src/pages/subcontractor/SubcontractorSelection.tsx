@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../../components/FullPageLayout';
 
 const SubcontractorSelection: React.FC = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const SubcontractorSelection: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full bg-[#f8fafc] text-[#0f172a] flex flex-col overflow-y-auto font-display">
+    <FullPageLayout>
       <header className="border-b border-slate-200 bg-white sticky top-0 z-50 flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -117,29 +118,37 @@ const SubcontractorSelection: React.FC = () => {
                 className="hidden peer"
                 name="category"
               />
-              <div className={`h-full p-6 bg-white border rounded-2xl shadow-sm transition-all flex flex-col items-center text-center ${
-                selectedCategories.includes(category.id)
-                  ? 'border-primary ring-2 ring-primary/5'
-                  : 'border-slate-200 hover:border-primary/50'
-              }`}>
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-colors ${
+              <div
+                className={`h-full p-6 bg-white border rounded-2xl shadow-sm transition-all flex flex-col items-center text-center ${
                   selectedCategories.includes(category.id)
-                    ? 'bg-primary/5'
-                    : 'bg-slate-50 group-hover:bg-primary/5'
-                }`}>
-                  <span className={`material-icons-round text-3xl transition-colors ${
+                    ? 'border-primary ring-2 ring-primary/5'
+                    : 'border-slate-200 hover:border-primary/50'
+                }`}
+              >
+                <div
+                  className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-5 transition-colors ${
                     selectedCategories.includes(category.id)
-                      ? 'text-primary'
-                      : 'text-slate-600 group-hover:text-primary'
-                  }`}>
+                      ? 'bg-primary/5'
+                      : 'bg-slate-50 group-hover:bg-primary/5'
+                  }`}
+                >
+                  <span
+                    className={`material-icons-round text-3xl transition-colors ${
+                      selectedCategories.includes(category.id)
+                        ? 'text-primary'
+                        : 'text-slate-600 group-hover:text-primary'
+                    }`}
+                  >
                     {category.icon}
                   </span>
                 </div>
                 <h3 className="font-bold text-lg mb-2 text-[#0f172a]">{category.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed">{category.description}</p>
-                <div className={`mt-5 transition-opacity ${
-                  selectedCategories.includes(category.id) ? 'opacity-100' : 'opacity-0'
-                }`}>
+                <div
+                  className={`mt-5 transition-opacity ${
+                    selectedCategories.includes(category.id) ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
                   <span className="material-icons-round text-primary">check_circle</span>
                 </div>
               </div>
@@ -160,7 +169,10 @@ const SubcontractorSelection: React.FC = () => {
             <div className="flex-grow flex justify-center text-sm font-medium text-slate-400 hidden sm:block">
               {selectedCategories.length} Kategori Seçildi
             </div>
-            <button className="px-10 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/30 transition-all flex items-center gap-2">
+            <button
+              onClick={() => navigate('/subcontractor/details')}
+              className="px-10 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/30 transition-all flex items-center gap-2"
+            >
               Devam Et
               <span className="material-icons-round text-sm">arrow_forward</span>
             </button>
@@ -171,17 +183,24 @@ const SubcontractorSelection: React.FC = () => {
       <footer className="bg-white border-t border-slate-200 py-8 flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-400 uppercase tracking-widest font-bold">
           <div className="flex items-center gap-8">
-            <a className="hover:text-primary transition-colors" href="#">KVKK Aydınlatma</a>
-            <a className="hover:text-primary transition-colors" href="#">Kullanım Koşulları</a>
-            <a className="hover:text-primary transition-colors" href="#">Bize Ulaşın</a>
+            <a className="hover:text-primary transition-colors" href="#">
+              KVKK Aydınlatma
+            </a>
+            <a className="hover:text-primary transition-colors" href="#">
+              Kullanım Koşulları
+            </a>
+            <a className="hover:text-primary transition-colors" href="#">
+              Bize Ulaşın
+            </a>
           </div>
           <div className="flex items-center gap-2 opacity-80">
             <span>© 2024 PORTLINK MARITIME SOLUTIONS</span>
           </div>
         </div>
       </footer>
-    </div>
+    </FullPageLayout>
   );
 };
 
 export default SubcontractorSelection;
+

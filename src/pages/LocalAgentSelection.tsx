@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../components/FullPageLayout';
 
 const LocalAgentSelection: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const LocalAgentSelection: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 flex flex-col overflow-y-auto">
+    <FullPageLayout>
       {/* Navigation / Header */}
       <header className="border-b border-primary/10 bg-white dark:bg-slate-900/50 sticky top-0 z-50 flex-shrink-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -160,7 +161,7 @@ const LocalAgentSelection: React.FC = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </FullPageLayout>
   );
 };
 

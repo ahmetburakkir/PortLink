@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../components/FullPageLayout';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -20,18 +21,19 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12 overflow-y-auto">
-      <div className="w-full max-w-md">
-        {/* Logo and Back Button */}
-        <div className="flex items-center justify-between mb-8">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
-          >
-            <span className="material-icons-round">arrow_back</span>
-            <span className="font-medium">Ana Sayfa</span>
-          </button>
-        </div>
+    <FullPageLayout>
+      <main className="flex-1 w-full flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12 overflow-y-auto">
+        <div className="w-full max-w-md">
+          {/* Logo and Back Button */}
+          <div className="flex items-center justify-between mb-8">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+            >
+              <span className="material-icons-round">arrow_back</span>
+              <span className="font-medium">Ana Sayfa</span>
+            </button>
+          </div>
 
         {/* Login Card */}
         <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200/50 dark:border-slate-700/50 p-8 md:p-10">
@@ -178,8 +180,9 @@ const Login: React.FC = () => {
             'nı kabul etmiş olursunuz.
           </p>
         </div>
-      </div>
-    </div>
+        </div>
+      </main>
+    </FullPageLayout>
   );
 };
 

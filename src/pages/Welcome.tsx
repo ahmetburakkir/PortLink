@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../components/FullPageLayout';
 
 const Welcome: React.FC = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const Welcome: React.FC = () => {
   ];
 
   return (
-    <div className="h-full w-full bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 flex flex-col overflow-y-auto">
+    <FullPageLayout>
       {/* Header */}
       <header className="w-full py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/50 dark:border-slate-700/50 flex-shrink-0">
         <div className="flex items-center gap-3">
@@ -213,7 +214,7 @@ const Welcome: React.FC = () => {
           </div>
         </div>
       </footer>
-    </div>
+    </FullPageLayout>
   );
 };
 

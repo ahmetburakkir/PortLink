@@ -3,8 +3,12 @@ import Welcome from './pages/Welcome';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import LocalAgentSelection from './pages/LocalAgentSelection';
-import SubcontractorSelection from './pages/SubcontractorSelection';
-import TechnicalExpertSelection from './pages/TechnicalExpertSelection';
+import SubcontractorSelection from './pages/subcontractor/SubcontractorSelection';
+import SubcontractorJobDetails from './pages/subcontractor/SubcontractorJobDetails';
+import SubcontractorResults from './pages/subcontractor/SubcontractorResults';
+import TechnicalExpertSelection from './pages/technical-expert/TechnicalExpertSelection';
+import TechnicalExpertJobDetails from './pages/technical-expert/TechnicalExpertJobDetails';
+import TechnicalExpertResults from './pages/technical-expert/TechnicalExpertResults';
 import PartnershipSelection from './pages/PartnershipSelection';
 import './App.css';
 
@@ -17,7 +21,11 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/local-agent" element={<LocalAgentSelection />} />
         <Route path="/subcontractor" element={<SubcontractorSelection />} />
+        <Route path="/subcontractor/details" element={<SubcontractorJobDetails />} />
+        <Route path="/subcontractor/results" element={<SubcontractorResults />} />
         <Route path="/technical-expert" element={<TechnicalExpertSelection />} />
+        <Route path="/technical-expert/details" element={<TechnicalExpertJobDetails />} />
+        <Route path="/technical-expert/results" element={<TechnicalExpertResults />} />
         <Route path="/partnership" element={<PartnershipSelection />} />
       </Routes>
     </Router>

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../components/FullPageLayout';
 
-type SupportOption = 'subcontractor' | 'local-agent' | 'technical-expert' | 'partnership' | null;
+type SupportOption = 'subcontractor' | 'local-agent' | 'technical-expert' | 'partnership' | 'none';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState<SupportOption>(null);
+  const [selectedOption, setSelectedOption] = useState<SupportOption>('none');
 
   const options = [
     {
@@ -39,20 +40,19 @@ const Home: React.FC = () => {
   };
 
   const handleContinue = () => {
-    if (selectedOption) {
-      const routes: Record<SupportOption, string> = {
+    if (selectedOption && selectedOption !== 'none') {
+      const routes: Record<Exclude<SupportOption, 'none'>, string> = {
         'local-agent': '/local-agent',
         'subcontractor': '/subcontractor',
         'technical-expert': '/technical-expert',
-        'partnership': '/partnership',
-        null: '/'
+        'partnership': '/partnership'
       };
       navigate(routes[selectedOption] || '/');
     }
   };
 
   return (
-    <div className="h-full w-full bg-gradient-to-br from-slate-50 via-blue-50/20 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 font-display text-slate-800 dark:text-slate-200 flex flex-col overflow-y-auto">
+    <FullPageLayout>
       {/* Header / Navigation */}
       <header className="w-full py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200/50 dark:border-slate-700/50 shadow-sm flex-shrink-0">
         <div className="flex items-center gap-3">
@@ -173,7 +173,7 @@ const Home: React.FC = () => {
       <footer className="w-full py-6 sm:py-8 px-4 sm:px-6 lg:px-8 text-center text-slate-400 dark:text-slate-500 text-sm border-t border-slate-200/50 dark:border-slate-800/50 mt-auto flex-shrink-0">
         <p>© 2024 Portlink Maritime Marketplace. Tüm hakları saklıdır.</p>
       </footer>
-    </div>
+    </FullPageLayout>
   );
 };
 

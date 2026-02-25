@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FullPageLayout from '../components/FullPageLayout';
 
 const PartnershipSelection: React.FC = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const PartnershipSelection: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 flex flex-col overflow-y-auto">
+    <FullPageLayout>
       <header className="w-full py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center bg-white/50 dark:bg-slate-900/50 backdrop-blur-md sticky top-0 z-50 flex-shrink-0">
         <div className="flex items-center gap-2">
           <div className="bg-primary p-1.5 rounded-lg">
@@ -167,7 +168,7 @@ const PartnershipSelection: React.FC = () => {
       <footer className="w-full py-6 sm:py-8 px-4 sm:px-6 lg:px-8 text-center text-slate-400 dark:text-slate-600 text-xs border-t border-slate-200 dark:border-slate-800 flex-shrink-0">
         <p>© 2024 Portlink Maritime Marketplace. Tüm hakları saklıdır.</p>
       </footer>
-    </div>
+    </FullPageLayout>
   );
 };
 
