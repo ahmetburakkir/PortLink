@@ -2,14 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Login from './pages/Login';
 import Home from './pages/Home';
-import LocalAgentSelection from './pages/LocalAgentSelection';
+import LocalAgentSelection from './pages/local-agent/LocalAgentSelection';
 import SubcontractorSelection from './pages/subcontractor/SubcontractorSelection';
 import SubcontractorJobDetails from './pages/subcontractor/SubcontractorJobDetails';
 import SubcontractorResults from './pages/subcontractor/SubcontractorResults';
 import TechnicalExpertSelection from './pages/technical-expert/TechnicalExpertSelection';
 import TechnicalExpertJobDetails from './pages/technical-expert/TechnicalExpertJobDetails';
 import TechnicalExpertResults from './pages/technical-expert/TechnicalExpertResults';
-import PartnershipSelection from './pages/PartnershipSelection';
+import PartnershipSelection from './pages/partnership/PartnershipSelection';
 import './App.css';
 
 function App() {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FullPageLayout from '../components/FullPageLayout';
+import FullPageLayout from '../../components/FullPageLayout';
+import LocalAgentDetails from './LocalAgentDetails';
 
 const LocalAgentSelection: React.FC = () => {
   const navigate = useNavigate();
@@ -155,8 +156,12 @@ const LocalAgentSelection: React.FC = () => {
             <span className="hidden md:block text-xs font-medium text-slate-400 italic">
               {selectedCategories.length} kategori seçildi
             </span>
-            <button className="px-10 py-2.5 bg-primary text-white rounded-lg font-bold shadow-lg shadow-primary/30 hover:bg-blue-700 active:scale-95 transition-all">
+            <button
+              onClick={() => navigate('/local-agent/LocalAgentDetails')}
+              className="px-10 py-3 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold shadow-lg shadow-primary/30 transition-all flex items-center gap-2"
+            >
               Devam Et
+              <span className="material-icons-round text-sm">arrow_forward</span>
             </button>
           </div>
         </div>
