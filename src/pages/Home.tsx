@@ -12,25 +12,25 @@ const Home: React.FC = () => {
     {
       id: 'subcontractor' as SupportOption,
       icon: 'groups',
-      title: 'Taşeron arıyorum',
+      title: 'Taşeron arıyorum.',
       description: 'Liman hizmetleri, operasyonel destek ve iş gücü gereksinimleriniz için profesyonel ekiplerle eşleşin.'
     },
     {
       id: 'local-agent' as SupportOption,
       icon: 'anchor',
-      title: 'Yerel acente arıyorum',
+      title: 'Yerel acente arıyorum.',
       description: 'Belirli bölge veya limanlarda gemi acenteliği ve resmi prosedür yönetimi için uzman desteği alın.'
     },
     {
       id: 'technical-expert' as SupportOption,
       icon: 'engineering',
-      title: 'Teknik uzman arıyorum',
+      title: 'Teknik uzman arıyorum.',
       description: 'Bakım, onarım, sörvey ve teknik denetim hizmetleri için kalifiye uzmanlara ulaşın.'
     },
     {
       id: 'partnership' as SupportOption,
       icon: 'handshake',
-      title: 'İş ortaklığı arıyorum',
+      title: 'İş ortaklığı arıyorum.',
       description: 'Uzun vadeli stratejik iş birlikleri ve geniş çaplı denizcilik projeleri için partnerler bulun.'
     }
   ];
